@@ -80,9 +80,9 @@ internal fun AppContentScreen(
             )
             navigationItem.primaryAction?.let { action ->
                 // When we have bottom navigation we show FAB at the bottom end.
-                if (navigationType == NavigationType.BOTTOM_NAVIGATION) {
+                if (navigationType == NavigationType.BOTTOM_NAVIGATION && !isDetailOnlyOpen) {
                     FloatingActionButton(
-                        onClick = { /*TODO*/ },
+                        onClick = navigationItem.actionClicked,
                         modifier = Modifier
                             .align(Alignment.BottomEnd)
                             .padding(16.dp),

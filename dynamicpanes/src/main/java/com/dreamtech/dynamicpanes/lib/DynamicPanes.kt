@@ -165,6 +165,7 @@ private fun AppNavigationWrapper(
                 selectedDestination = selectedDestination,
                 navigationContentPosition = navigationContentPosition,
                 navigateToTopLevelDestination = navigationActions::navigateTo,
+                onPrimaryActionClicked = selectedDestination.actionClicked
             )
         }) {
             AppContent(
@@ -186,6 +187,7 @@ private fun AppNavigationWrapper(
                     selectedDestination = selectedDestination,
                     navigationContentPosition = navigationContentPosition,
                     navigateToTopLevelDestination = navigationActions::navigateTo,
+                    onPrimaryActionClicked = selectedDestination.actionClicked,
                     onDrawerClicked = {
                         scope.launch {
                             drawerState.close()
@@ -235,6 +237,7 @@ private fun AppContent(
                 navigationContentPosition = navigationContentPosition,
                 navigateToTopLevelDestination = navigateToTopLevelDestination,
                 onDrawerClicked = onDrawerClicked,
+                onPrimaryActionClicked = selectedDestination.actionClicked
             )
         }
         Column(
